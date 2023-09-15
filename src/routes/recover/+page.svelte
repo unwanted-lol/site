@@ -35,7 +35,7 @@
 	{#if recoveryMode === true}
 		<form action="?/password" method="POST" class="auth-form">
 			<input type="password" name="new_password" placeholder="new password" />
-			<!-- <Turnstile siteKey="0x4AAAAAAACwixmFyopDzFGx" theme="dark" /> -->
+			<!-- <Turnstile siteKey="0x4AAAAAAAKMyxv1BmHMiYDO" theme="dark" /> -->
 			<button type="submit" class="btn btn-primary">change</button>
 		</form>
 	{:else}
