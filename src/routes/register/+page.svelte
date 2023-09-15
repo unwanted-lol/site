@@ -13,7 +13,7 @@
 	<form action="?/register" method="POST" class="auth-form">
 		<input type="text" name="email" placeholder="email" />
 		<input type="password" name="password" placeholder="password" />
-		<Turnstile siteKey="0x4AAAAAAACwixmFyopDzFGx" theme="dark" />
+		<Turnstile siteKey="0x4AAAAAAAKMyxv1BmHMiYDO" theme="dark" />
 		<button type="submit" class="btn btn-primary">register</button>
 	</form>
 </main>
