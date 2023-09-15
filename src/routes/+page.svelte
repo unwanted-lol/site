@@ -31,7 +31,7 @@
 	<div class="hero-wrapper">
 		<h1 class="hero-title animate-enter" style="--stagger: 1">unwanted.lol</h1>
 		<h2 class="hero-subtitle animate-enter" style="--stagger: 4">
-			A skidded biolink experience
+			A streamlined biolink experience
 		</h2>
 		<a href="/register" class="btn-primary animate-enter" style="--stagger: 5">Get Started</a>
 	</div>
