@@ -184,7 +184,10 @@ export const badgeMap: { [name: string]: { name: string; icon: string } } = {
 	bronze_medal: {
 		name: 'Bronze Medal',
 		icon: BronzeMedalBadge
-	}
+	},
+	booster: {
+		name: 'Server Booster',
+		icon: BoosterBadge
 };
 
 export const solidMap: { [name: string]: { icon: any } } = {
