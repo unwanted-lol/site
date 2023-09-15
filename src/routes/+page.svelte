@@ -20,7 +20,7 @@
 	<div class="header-wrapper">
 		<div class="left-column" />
 		<div class="right-column">
-			<a href="https://discord.gg/HPkVBpAYMw" class="btn-discord">Discord</a>
+			<a href="https://discord.gg/EmcYhzzDb4" class="btn-discord">Discord</a>
 			{#if data.session}
 				<a href="/dashboard" class="btn-secondary">Dashboard</a>
 			{:else}
@@ -29,9 +29,9 @@
 		</div>
 	</div>
 	<div class="hero-wrapper">
-		<h1 class="hero-title animate-enter" style="--stagger: 1">wanted.lol</h1>
+		<h1 class="hero-title animate-enter" style="--stagger: 1">unwanted.lol</h1>
 		<h2 class="hero-subtitle animate-enter" style="--stagger: 4">
-			A streamlined biolink experience
+			A skidded biolink experience
 		</h2>
 		<a href="/register" class="btn-primary animate-enter" style="--stagger: 5">Get Started</a>
 	</div>
