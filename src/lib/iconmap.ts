@@ -29,6 +29,8 @@ import PartnerBadge from '$lib/icons/badges/partner.svg?url';
 import GoldMedalBadge from '$lib/icons/badges/gold_medal.png';
 import SilverMedalBadge from '$lib/icons/badges/silver_medal.png';
 import BronzeMedalBadge from '$lib/icons/badges/bronze_medal.png';
+import BoosterBadge from '$lib/icons/badges/booster.svg?url';
+
 
 import VisibiltyIcon from '$lib/icons/solid/visibility.svg?url';
 import VotingChipIcon from '$lib/icons/solid/voting_chip.svg?url';
