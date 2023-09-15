@@ -188,6 +188,7 @@ export const badgeMap: { [name: string]: { name: string; icon: string } } = {
 	booster: {
 		name: 'Server Booster',
 		icon: BoosterBadge
+	}
 };
 
 export const solidMap: { [name: string]: { icon: any } } = {
