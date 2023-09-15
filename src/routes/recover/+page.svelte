@@ -41,7 +41,7 @@
 	{:else}
 		<form action="?/forgot" method="POST" class="auth-form">
 			<input type="email" name="email" placeholder="email" />
-			<Turnstile siteKey="0x4AAAAAAACwixmFyopDzFGx" theme="dark" />
+			<Turnstile siteKey="0x4AAAAAAAKMyxv1BmHMiYDO" theme="dark" />
 			<button type="submit" class="btn btn-primary">send</button>
 		</form>
 	{/if}
