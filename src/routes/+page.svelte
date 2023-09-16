@@ -329,71 +329,66 @@
 			max-width: 1000px;
 			padding: 0 1rem;
 
-			@media screen and (max-width: 768px) {
-				display: none;
-			}
+@media screen and (max-width: 768px) {
+  main {
+    text-align: center; /* Center-align content on smaller screens */
+  }
 
-			.feature-wrapper {
-				display: flex;
-				flex-direction: row;
-				align-items: center;
-				justify-content: center;
-				text-align: center;
-				margin: 5rem auto;
-				overflow: hidden;
-				height: 40vh;
-				width: 100%;
-				max-width: 1000px;
-				padding: 0 1rem;
+  .header-wrapper {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    justify-content: center; /* Center-align content on smaller screens */
+    text-align: center; /* Center-align text on smaller screens */
+  }
 
-				.feature-textarea {
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					justify-content: center;
-					text-align: center;
-					margin: 0 auto;
-					height: 100%;
-					width: 100%;
-					max-width: 1000px;
-					padding: 0 1rem;
+  .left-column,
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-					.feature-title {
-						font-size: 2rem;
-						font-weight: 700;
-						margin: 0;
-						color: #fff;
-					}
+  .btn-secondary,
+  .btn-discord {
+    margin: 1rem 0; /* Add spacing between buttons on smaller screens */
+  }
 
-					.feature-description {
-						font-size: 1rem;
-						font-weight: 400;
-						margin: 0;
-						color: #fff;
-					}
-				}
+  .hero-wrapper {
+    height: auto; /* Remove fixed height on hero section */
+  }
 
-				.feature-image {
-					width: 100%;
-					max-width: 1000px;
-					padding: 0 1rem;
-					background-size: cover;
-					background-position: center;
-					background-repeat: no-repeat;
+  .hero-title {
+    font-size: 2rem; /* Reduce font size for hero title */
+  }
 
-					img {
-						width: 100%;
-						object-fit: cover;
-						transform: perspective(1000px) rotate3d(1, 0, 0, 0deg) scale3d(1, 1, 1);
-						transition: all 0.25s ease-in-out;
+  .hero-subtitle {
+    font-size: 1rem; /* Reduce font size for hero subtitle */
+  }
 
-						&:hover {
-							transform: perspective(1000px) rotate3d(1, 0, 0, 5deg)
-								scale3d(1.05, 1.05, 1.05);
-						}
-					}
-				}
-			}
-		}
-	}
+  .btn-primary {
+    min-width: 150px; /* Adjust button width for smaller screens */
+  }
+
+  .features-wrapper {
+    margin: 2rem 0; /* Add more margin between features on smaller screens */
+  }
+
+  .feature-wrapper {
+    flex-direction: column; /* Stack features on smaller screens */
+    height: auto; /* Remove fixed height on features */
+    margin: 2rem 0;
+  }
+
+  .feature-title {
+    font-size: 1.5rem; /* Reduce font size for feature titles */
+  }
+
+  .feature-description {
+    font-size: 1rem; /* Reduce font size for feature descriptions */
+  }
+
+  .feature-image img {
+    max-width: 100%; /* Ensure images scale down on smaller screens */
+  }
+}
 </style>
