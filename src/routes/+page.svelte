@@ -96,7 +96,7 @@
         display: flex;
         flex-direction: row;
         align-items: flex-end;
-        justify-content: flex-end;
+        justify-content: right;
         text-align: right;
         margin: 1rem 0;
 
@@ -165,7 +165,7 @@
       padding: 0 1rem;
 
       @media screen and (max-width: 600px) {
-        height: 100dvh;
+        height: 100vh;
       }
 
       .hero-title {
@@ -247,7 +247,7 @@
 
     .leaderboards-wrapper {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       justify-content: center;
       text-align: center;
@@ -319,30 +319,30 @@
             }
           }
         }
-      }
 
-      .btn-primary {
-        appearance: none;
-        background-color: var(--color-background-soft);
-        border: 1px solid var(--color-background-soft);
-        border-radius: 6px;
-        color: var(--color-heading);
-        display: inline-block;
-        font-family: inherit;
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 32px;
-        padding: 8px 35px;
-        margin: 1rem 0 0 0;
-        min-width: 200px;
-        text-align: center;
-        text-decoration: none;
-        transition: all 0.2s ease-in-out;
-
-        &:hover {
-          background-color: var(--color-background-mute);
-          border-color: var(--color-background-mute);
+        .btn-primary {
+          appearance: none;
+          background-color: var(--color-background-soft);
+          border: 1px solid var(--color-background-soft);
+          border-radius: 6px;
           color: var(--color-heading);
+          display: inline-block;
+          font-family: inherit;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 32px;
+          padding: 8px 35px;
+          margin: 1rem 0 0 0;
+          min-width: 200px;
+          text-align: center;
+          text-decoration: none;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            background-color: var(--color-background-mute);
+            border-color: var(--color-background-mute);
+            color: var(--color-heading);
+          }
         }
       }
     }
@@ -369,9 +369,9 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        margin: 0 auto;
+        margin: 5rem auto;
         overflow: hidden;
-        height: 100%;
+        height: 40vh;
         width: 100%;
         max-width: 1000px;
         padding: 0 1rem;
@@ -398,7 +398,7 @@
           .feature-description {
             font-size: 1rem;
             font-weight: 400;
-            margin: 1rem 0;
+            margin: 0;
             color: #fff;
           }
         }
@@ -422,30 +422,30 @@
             }
           }
         }
-      }
 
-      .btn-primary {
-        appearance: none;
-        background-color: var(--color-background-soft);
-        border: 1px solid var(--color-background-soft);
-        border-radius: 6px;
-        color: var(--color-heading);
-        display: inline-block;
-        font-family: inherit;
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 32px;
-        padding: 8px 35px;
-        margin: 1rem 0 0 0;
-        min-width: 200px;
-        text-align: center;
-        text-decoration: none;
-        transition: all 0.2s ease-in-out;
-
-        &:hover {
-          background-color: var(--color-background-mute);
-          border-color: var(--color-background-mute);
+        .btn-primary {
+          appearance: none;
+          background-color: var(--color-background-soft);
+          border: 1px solid var(--color-background-soft);
+          border-radius: 6px;
           color: var(--color-heading);
+          display: inline-block;
+          font-family: inherit;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 32px;
+          padding: 8px 35px;
+          margin: 1rem 0 0 0;
+          min-width: 200px;
+          text-align: center;
+          text-decoration: none;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            background-color: var(--color-background-mute);
+            border-color: var(--color-background-mute);
+            color: var(--color-heading);
+          }
         }
       }
     }
