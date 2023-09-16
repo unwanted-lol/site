@@ -96,7 +96,7 @@
         display: flex;
         flex-direction: row;
         align-items: flex-end;
-        justify-content: flex-end; /* Center the content horizontally */
+        justify-content: flex-end;
         text-align: right;
         margin: 1rem 0;
 
@@ -158,14 +158,14 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      margin: 5vh auto; /* Move the hero up slightly */
-      height: 80vh; /* Reduce the height for better centering */
+      margin: 0 auto;
+      height: 90vh;
       width: 100%;
       max-width: 1000px;
       padding: 0 1rem;
 
       @media screen and (max-width: 600px) {
-        height: 100vh;
+        height: 100dvh;
       }
 
       .hero-title {
@@ -178,7 +178,7 @@
       .hero-subtitle {
         font-size: 1.5rem;
         font-weight: 400;
-        margin: 1rem 0; /* Add margin to push the text down */
+        margin: 0;
         color: #fff;
       }
 
@@ -251,14 +251,14 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      margin: 5vh auto; /* Move the section up slightly */
-      height: 80vh; /* Reduce the height for better centering */
+      margin: 0 auto;
+      height: 100%;
       width: 100%;
       max-width: 1000px;
       padding: 0 1rem;
 
       @media screen and (max-width: 768px) {
-        height: auto;
+        display: none;
       }
 
       .views-leaderboard {
@@ -278,7 +278,7 @@
         .leaderboard-title-text {
           font-size: 1.5rem;
           font-weight: 700;
-          margin: 1rem 0; /* Add margin to push the text down */
+          margin: 0;
           color: #fff;
         }
 
@@ -319,30 +319,30 @@
             }
           }
         }
+      }
 
-        .btn-primary {
-          appearance: none;
-          background-color: var(--color-background-soft);
-          border: 1px solid var(--color-background-soft);
-          border-radius: 6px;
+      .btn-primary {
+        appearance: none;
+        background-color: var(--color-background-soft);
+        border: 1px solid var(--color-background-soft);
+        border-radius: 6px;
+        color: var(--color-heading);
+        display: inline-block;
+        font-family: inherit;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 32px;
+        padding: 8px 35px;
+        margin: 1rem 0 0 0;
+        min-width: 200px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background-color: var(--color-background-mute);
+          border-color: var(--color-background-mute);
           color: var(--color-heading);
-          display: inline-block;
-          font-family: inherit;
-          font-size: 18px;
-          font-weight: 600;
-          line-height: 32px;
-          padding: 8px 35px;
-          margin: 1rem 0 0 0;
-          min-width: 200px;
-          text-align: center;
-          text-decoration: none;
-          transition: all 0.2s ease-in-out;
-
-          &:hover {
-            background-color: var(--color-background-mute);
-            border-color: var(--color-background-mute);
-            color: var(--color-heading);
-          }
         }
       }
     }
@@ -353,25 +353,25 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      margin: 5vh auto; /* Move the section up slightly */
-      height: 80vh; /* Reduce the height for better centering */
+      margin: 0 auto;
+      height: 100%;
       width: 100%;
       max-width: 1000px;
       padding: 0 1rem;
 
       @media screen and (max-width: 768px) {
-        height: auto;
+        display: none;
       }
 
       .feature-wrapper {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         text-align: center;
-        margin: 2rem auto; /* Add margin to push the section up slightly */
+        margin: 0 auto;
         overflow: hidden;
-        height: auto;
+        height: 100%;
         width: 100%;
         max-width: 1000px;
         padding: 0 1rem;
@@ -382,7 +382,7 @@
           align-items: center;
           justify-content: center;
           text-align: center;
-          margin: 2rem auto; /* Add margin to push the text up slightly */
+          margin: 0 auto;
           height: 100%;
           width: 100%;
           max-width: 1000px;
@@ -398,7 +398,7 @@
           .feature-description {
             font-size: 1rem;
             font-weight: 400;
-            margin: 1rem 0; /* Add margin to push the text down slightly */
+            margin: 1rem 0;
             color: #fff;
           }
         }
@@ -422,30 +422,30 @@
             }
           }
         }
+      }
 
-        .btn-primary {
-          appearance: none;
-          background-color: var(--color-background-soft);
-          border: 1px solid var(--color-background-soft);
-          border-radius: 6px;
+      .btn-primary {
+        appearance: none;
+        background-color: var(--color-background-soft);
+        border: 1px solid var(--color-background-soft);
+        border-radius: 6px;
+        color: var(--color-heading);
+        display: inline-block;
+        font-family: inherit;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 32px;
+        padding: 8px 35px;
+        margin: 1rem 0 0 0;
+        min-width: 200px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background-color: var(--color-background-mute);
+          border-color: var(--color-background-mute);
           color: var(--color-heading);
-          display: inline-block;
-          font-family: inherit;
-          font-size: 18px;
-          font-weight: 600;
-          line-height: 32px;
-          padding: 8px 35px;
-          margin: 1rem 0 0 0;
-          min-width: 200px;
-          text-align: center;
-          text-decoration: none;
-          transition: all 0.2s ease-in-out;
-
-          &:hover {
-            background-color: var(--color-background-mute);
-            border-color: var(--color-background-mute);
-            color: var(--color-heading);
-          }
         }
       }
     }
