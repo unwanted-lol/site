@@ -247,7 +247,7 @@
 
     .leaderboards-wrapper {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
@@ -258,7 +258,7 @@
       padding: 0 1rem;
 
       @media screen and (max-width: 768px) {
-        display: none;
+        display: flex;
       }
 
       .views-leaderboard {
@@ -360,18 +360,18 @@
       padding: 0 1rem;
 
       @media screen and (max-width: 768px) {
-        display: none;
+        display: flex;
       }
 
       .feature-wrapper {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
         margin: 5rem auto;
         overflow: hidden;
-        height: 40vh;
+        height: auto;
         width: 100%;
         max-width: 1000px;
         padding: 0 1rem;
