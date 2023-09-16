@@ -96,7 +96,7 @@
         display: flex;
         flex-direction: row;
         align-items: flex-end;
-        justify-content: right;
+        justify-content: flex-end; /* Center the content horizontally */
         text-align: right;
         margin: 1rem 0;
 
@@ -158,8 +158,8 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      margin: 0 auto;
-      height: 90vh;
+      margin: 5vh auto; /* Move the hero up slightly */
+      height: 80vh; /* Reduce the height for better centering */
       width: 100%;
       max-width: 1000px;
       padding: 0 1rem;
@@ -178,7 +178,7 @@
       .hero-subtitle {
         font-size: 1.5rem;
         font-weight: 400;
-        margin: 0;
+        margin: 1rem 0; /* Add margin to push the text down */
         color: #fff;
       }
 
@@ -251,14 +251,14 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      margin: 0 auto;
-      height: 100%;
+      margin: 5vh auto; /* Move the section up slightly */
+      height: 80vh; /* Reduce the height for better centering */
       width: 100%;
       max-width: 1000px;
       padding: 0 1rem;
 
       @media screen and (max-width: 768px) {
-        display: flex;
+        height: auto;
       }
 
       .views-leaderboard {
@@ -278,7 +278,7 @@
         .leaderboard-title-text {
           font-size: 1.5rem;
           font-weight: 700;
-          margin: 0;
+          margin: 1rem 0; /* Add margin to push the text down */
           color: #fff;
         }
 
@@ -353,14 +353,14 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      margin: 0 auto;
-      height: 100%;
+      margin: 5vh auto; /* Move the section up slightly */
+      height: 80vh; /* Reduce the height for better centering */
       width: 100%;
       max-width: 1000px;
       padding: 0 1rem;
 
       @media screen and (max-width: 768px) {
-        display: flex;
+        height: auto;
       }
 
       .feature-wrapper {
@@ -369,7 +369,7 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        margin: 5rem auto;
+        margin: 2rem auto; /* Add margin to push the section up slightly */
         overflow: hidden;
         height: auto;
         width: 100%;
@@ -382,7 +382,7 @@
           align-items: center;
           justify-content: center;
           text-align: center;
-          margin: 0 auto;
+          margin: 2rem auto; /* Add margin to push the text up slightly */
           height: 100%;
           width: 100%;
           max-width: 1000px;
@@ -398,7 +398,7 @@
           .feature-description {
             font-size: 1rem;
             font-weight: 400;
-            margin: 0;
+            margin: 1rem 0; /* Add margin to push the text down slightly */
             color: #fff;
           }
         }
