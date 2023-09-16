@@ -328,20 +328,17 @@
 			width: 100%;
 			max-width: 1000px;
 			padding: 0 1rem;
-</style>
+}
 
-
-<style>
-/* Add mobile-specific styles */
 @media screen and (max-width: 768px) {
   main {
-    text-align: center; /* Center-align content on smaller screens */
+    text-align: center;
   }
 
   .header-wrapper {
-    grid-template-columns: 1fr; /* Stack columns on smaller screens */
-    justify-content: center; /* Center-align content on smaller screens */
-    text-align: center; /* Center-align text on smaller screens */
+    grid-template-columns: 1fr;
+    justify-content: center;
+    text-align: center;
   }
 
   .left-column,
@@ -354,45 +351,45 @@
 
   .btn-secondary,
   .btn-discord {
-    margin: 1rem 0; /* Add spacing between buttons on smaller screens */
+    margin: 1rem 0;
   }
 
   .hero-wrapper {
-    height: auto; /* Remove fixed height on hero section */
+    height: auto;
   }
 
   .hero-title {
-    font-size: 2rem; /* Reduce font size for hero title */
+    font-size: 2rem;
   }
 
   .hero-subtitle {
-    font-size: 1rem; /* Reduce font size for hero subtitle */
+    font-size: 1rem;
   }
 
   .btn-primary {
-    min-width: 150px; /* Adjust button width for smaller screens */
+    min-width: 150px;
   }
 
   .features-wrapper {
-    margin: 2rem 0; /* Add more margin between features on smaller screens */
+    margin: 2rem 0;
   }
 
   .feature-wrapper {
-    flex-direction: column; /* Stack features on smaller screens */
-    height: auto; /* Remove fixed height on features */
+    flex-direction: column;
+    height: auto;
     margin: 2rem 0;
   }
 
   .feature-title {
-    font-size: 1.5rem; /* Reduce font size for feature titles */
+    font-size: 1.5rem;
   }
 
   .feature-description {
-    font-size: 1rem; /* Reduce font size for feature descriptions */
+    font-size: 1rem;
   }
 
   .feature-image img {
-    max-width: 100%; /* Ensure images scale down on smaller screens */
+    max-width: 100%;
   }
 }
 
