@@ -38,7 +38,7 @@
 					Your account <span class="banned-username">{data.session.user.email}</span> has
 					been disabled. due to violation of our Terms of Service. For support or
 					assistance, please contact us at out
-					<a href="https://discord.gg/2Z8qZ9Z" class="banned-link">support Discord</a>.
+					<a href="https://discord.gg/EmcYhzzDb4" class="banned-link">support Discord</a>.
 				</h4>
 			</div>
 		{:else}
