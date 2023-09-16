@@ -328,7 +328,11 @@
 			width: 100%;
 			max-width: 1000px;
 			padding: 0 1rem;
+</style>
 
+
+<style>
+/* Add mobile-specific styles */
 @media screen and (max-width: 768px) {
   main {
     text-align: center; /* Center-align content on smaller screens */
@@ -391,4 +395,5 @@
     max-width: 100%; /* Ensure images scale down on smaller screens */
   }
 }
+
 </style>
