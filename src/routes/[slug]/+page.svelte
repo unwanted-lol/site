@@ -61,6 +61,11 @@
 						<Snow />
 					{/if}
 				</div>
+				<div class="effect-wrapper">
+					{#if data.body.effects.includes('MoneySnow')}
+						<MoneySnow />
+					{/if}
+				</div>
 				<div class="card-wrapper">
 					<div class="card">
 						{#if data.body.avatar}
