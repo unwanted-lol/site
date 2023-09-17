@@ -20,7 +20,7 @@
 		goto('/login');
 	};
 
-	const effectsMap = ['snow', 'monochrome_icons'];
+	const effectsMap = ['snow', 'monochrome_icons', 'MoneySnow'];
 
 	let presence: any = null;
 
