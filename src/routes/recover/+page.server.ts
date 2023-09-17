@@ -45,7 +45,7 @@ export const actions: Actions = {
 		}
 
 		const { data, error } = await locals.sb.auth.resetPasswordForEmail(email, {
-			redirectTo: 'https://wanted.lol/recover'
+			redirectTo: 'https://unwanted.lol/recover'
 		});
 
 		console.log(data, error);
