@@ -25,8 +25,7 @@
 		<div class="presence">
 			<div class="presence__avatar">
 				<img
-					src="https://cdn.discordapp.com/avatars/{presence.data.discord_user
-						.id}/{presence.data.discord_user.avatar}.png"
+					src="{presence.data.discord_user.avatar}"
 					alt="Avatar"
 				/>
 			</div>
