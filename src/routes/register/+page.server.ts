@@ -79,17 +79,8 @@ export const actions: Actions = {
 			.select('email')
 			.eq('email', email);
 
-		await supabaseClient.from('users').insert([
-			{
-				email: email
-			}
-		]);
-	
-		await supabaseClient.from('views').insert([
-			{
-				email: email
-			}
-		]);
+		await supabaseClient.from('users').insert([{ email }]);
+		await supabaseClient.from('views').insert([{ email }]);
 
 		return { success: true };
 	}
