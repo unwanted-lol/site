@@ -79,14 +79,12 @@ export const actions: Actions = {
 			.select('email')
 			.eq('email', email);
 
-		if (users && users.length === 0) {
-			await supabaseClient.from('users').insert([
-				{
-					email: email
-				}
-			]);
-		}
-
+		await supabaseClient.from('users').insert([
+			{
+				email: email
+			}
+		]);
+	
 		await supabaseClient.from('views').insert([
 			{
 				email: email
