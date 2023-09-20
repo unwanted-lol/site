@@ -38,6 +38,13 @@
 		});
 	});
 </script>
+<head>
+<meta property="og:title" content="/{slug}">
+<meta property="og:description" content="@ shuttle.rip">
+<meta property="og:image" content="{data.body.avatar}">
+<meta property="og:url" content="https://shuttle.rip/{slug}">
+<meta property="theme-color" content="#ffffff">
+</head>
 
 <main>
 	{#if data.body}
