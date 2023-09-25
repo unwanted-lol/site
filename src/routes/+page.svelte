@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import Particles from 'svelte-particles';
-	import type { Engine } from 'tsparticles-engine';
 // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
 	import { cubicOut } from 'svelte/easing';
 	import { fade } from 'svelte/transition';
