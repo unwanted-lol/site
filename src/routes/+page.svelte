@@ -1,453 +1,386 @@
 <script lang="ts">
-	import dashboardImage from '$lib/media/promotional/dashboard_image.png';
-	import slugImage from '$lib/media/promotional/slug_image.png';
-
 	import { onMount } from 'svelte';
+	import Particles from 'svelte-particles';
+	import type { Engine } from 'tsparticles-engine';
+	import { loadSlim } from 'tsparticles-slim';
+// if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
+	import { cubicOut } from 'svelte/easing';
+	import { fade } from 'svelte/transition';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 
-	const scrollPage = () => {
-		window.scrollBy({
-			top: window.innerHeight,
-			left: 0,
-			behavior: 'smooth'
-		});
+	let particlesConfig = {
+		particles: {
+			color: {
+				value: '#FFF'
+			},
+			links: {
+				enable: true,
+				color: '#FFF'
+			},
+			move: {
+				enable: true
+			},
+			number: {
+				value: 100
+			},
+			size: {
+				value: 3
+			},
+			// make blurry
+			opacity: {
+				value: 0.15,
+				random: true,
+				anim: {
+					enable: true,
+					speed: 1
+				}
+			}
+		}
 	};
+
+	let particlesInit = async (engine: Engine) => {
+		await loadSlim(engine);
+	};
+
+	let state: 'home' | 'features' | 'discord' = 'home';
+	let routes = ['home', 'features', 'discord'];
 </script>
 
 <main>
-	<div class="header-wrapper">
-		<div class="left-column" />
-		<div class="right-column">
-			<a href="https://discord.gg/EmcYhzzDb4" class="btn-discord">Discord</a>
-			{#if data.session}
-				<a href="/dashboard" class="btn-secondary">Dashboard</a>
-			{:else}
-				<a href="/login" class="btn-secondary">Login</a>
-			{/if}
-		</div>
-	</div>
-	<div class="hero-wrapper">
-		<h1 class="hero-title animate-enter" style="--stagger: 1">unwanted.lol</h1>
-		<h2 class="hero-subtitle animate-enter" style="--stagger: 4">
-			A streamlined biolink experience
-		</h2>
-		<a href="/register" class="btn-primary animate-enter" style="--stagger: 5">Get Started</a>
-	</div>
+	<nav>
+		<div class="navbar-container">
+			<div class="navbar-left">
+				<img
+					src="https://media.discordapp.net/attachments/1151595849940467756/1155291328700227584/image-removebg-preview_5.png?width=249&height=249"
+					alt="logo"
+				/>
+				<span> shuttle.rip </span>
 
-	<div class="features-wrapper">
-		<div class="feature-wrapper">
-			<div class="feature-textarea">
-				<h3 class="feature-title">Customizable 🎨</h3>
-				<p class="feature-description">
-					Customize your biolink to your liking with effects and images to create a
-					beautiful and sleek design.
-				</p>
+				<div class="navbar-links">
+					{#each routes as route}
+						<!-- svelte-ignore a11y-click-events-have-key-events -->
+						<!-- svelte-ignore a11y-missing-attribute -->
+						<a
+							on:click={() => (state = route)}
+							style={state === route ? 'scale: 1.05; color: #fff;' : ''}
+						>
+							{route}
+						</a>
+					{/each}
+				</div>
 			</div>
-			<div class="feature-image">
-				<img src={slugImage} alt="" />
-			</div>
-		</div>
-		<div class="feature-wrapper">
-			<div class="feature-image">
-				<img src={dashboardImage} alt="" />
-			</div>
-			<div class="feature-textarea">
-				<h3 class="feature-title">Free 💰</h3>
-				<p class="feature-description">
-					Features that competing services charge extra for are free here. No extra charge
-					to make your page stand out from the crowd.
-				</p>
+			<div class="navbar-buttons">
+				{#if data.session}
+					<a href="/dashboard"> Dashboard </a>
+				{:else}
+				<a href="/register"> Log in </a>
+				<a href="/login"> Register </a>
+				{/if}
 			</div>
 		</div>
+	</nav>
+
+	{#if state === 'home'}
+		<div class="content-container" in:fade={{ duration: 500, delay: 0, easing: cubicOut }}>
+			<div class="text-container">
+				<h1>shuttle.rip</h1>
+				<p>A streamlined biolink experience</p>
+			</div>
+			<div class="stats-container">
+				<div class="stat">
+					<h1>69</h1>
+					<p>Users</p>
+				</div>
+				<div class="stat">
+					<h1>420</h1>
+					<p>Views</p>
+				</div>
+			</div>
+			<a href="/register">Get started 🚀</a>
+		</div>
+	{:else if state === 'features'}
+		<div class="content-container" in:fade={{ duration: 500, delay: 0, easing: cubicOut }}>
+			<div class="text-container">
+				<h1>Features</h1>
+				<p>Customize your biolink with a variety of features</p>
+			</div>
+
+			<div class="feature-grid">
+				<div class="feature-grid-card">
+					<h3>
+						Interactive Dashboard 
+						from './$types'; export let data: PageData;
+					</h3>
+					<p>
+						Our dashboard is easy to use and allows you to customize your biolink with
+						ease.
+					</p>
+				</div>
+				<div class="feature-grid-card">
+					<h3>Unique Profile Card</h3>
+					<p>
+						Your profile card is unique to you and allows you to show off your socials.
+					</p>
+				</div>
+				<div class="feature-grid-card">
+					<h3>Data Security</h3>
+					<p>
+						Your data and personal information is safe with us. We don't sell your data
+						to third parties.
+					</p>
+				</div>
+				<div class="feature-grid-card">
+					<h3>Support</h3>
+					<p>
+						We have a dedicated support team to help you with any issues you may have.
+					</p>
+				</div>
+			</div>
+		</div>
+	{:else if state === 'discord'}
+		<div class="content-container" in:fade={{ duration: 500, delay: 0, easing: cubicOut }}>
+			<div class="text-container">
+				<h1>Join our Discord</h1>
+				<p>Join our Discord to get support and stay up to date with the latest updates</p>
+			</div>
+			<a href="https://discord.gg/shuttlebio">Join our Discord</a>
+		</div>
+	{/if}
+
+	<div class="background">
+		<Particles id="tsparticles" options={particlesConfig} {particlesInit} />
 	</div>
 </main>
 
 <style lang="scss">
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    text-align: center;
+	main {
+		height: 100vh;
+		width: 100vw;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
 
-    .header-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr;
-      grid-template-areas: 'left right';
-      width: 100%;
-      max-width: 1000px;
-      padding: 0 1rem;
-      margin: 0 auto;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1;
+		nav {
+			position: fixed;
+			top: 12px;
+			width: 100%;
+			max-width: 650px;
+			border-radius: 3rem;
+			padding: 12px;
+			background-color: rgba(38, 38, 35, 0.5);
 
-      .left-column {
-        grid-area: left;
-      }
+			.navbar-container {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				width: 100%;
+				height: 100%;
 
-      .right-column {
-        grid-area: right;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: right;
-        text-align: right;
-        margin: 1rem 0;
+				.navbar-left {
+					// align the logo and text vertically but side by side
+					display: flex;
+					flex-direction: row;
 
-        .btn-secondary {
-          appearance: none;
-          background-color: transparent;
-          border: 1px solid var(--color-background-soft);
-          border-radius: 6px;
-          color: var(--color-heading);
-          display: inline-block;
-          font-family: inherit;
-          font-size: 18px;
-          font-weight: 600;
-          line-height: 32px;
-          padding: 8px 35px;
-          margin: 0 0 0 1rem;
-          min-width: 100px;
-          text-align: center;
-          text-decoration: none;
-          transition: all 0.2s ease-in-out;
+					align-items: center;
 
-          &:hover {
-            background-color: var(--color-background-mute);
-            border-color: var(--color-background-mute);
-            color: var(--color-heading);
-          }
-        }
+					img {
+						height: 30px;
+						width: 30px;
+						margin-right: 10px;
+					}
 
-        .btn-discord {
-          appearance: none;
-          background-color: #7289da;
-          border: 1px solid #7289da;
-          border-radius: 6px;
-          color: #fff;
-          display: inline-block;
-          font-family: inherit;
-          font-size: 18px;
-          font-weight: 600;
-          line-height: 32px;
-          padding: 8px 35px;
-          margin: 0 0 0 1rem;
-          min-width: 100px;
-          text-align: center;
-          text-decoration: none;
-          transition: all 0.2s ease-in-out;
+					span {
+						font-size: 1rem;
+						font-weight: 600;
+						color: #fff;
+					}
 
-          &:hover {
-            background-color: #5f73bc;
-            border-color: #5f73bc;
-            color: #fff;
-          }
-        }
-      }
-    }
+					.navbar-links {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						margin-left: 12px;
 
-    .hero-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      margin: 0 auto;
-      height: 90vh;
-      width: 100%;
-      max-width: 1000px;
-      padding: 0 1rem;
+						a {
+							// shouldnt look like a button just a link
+							background-color: transparent;
+							border-radius: 0;
+							margin-left: 12px;
+							color: var(--color-text);
+							text-decoration: none;
+							font-size: 0.9rem;
+							transition: all 0.2s ease-in-out;
 
-      @media screen and (max-width: 600px) {
-        height: 100vh;
-      }
+							&:hover {
+								scale: 1.05;
+							}
+						}
 
-      .hero-title {
-        font-size: 3rem;
-        font-weight: 700;
-        margin: 0;
-        color: #fff;
-      }
+						@media screen and (max-width: 600px) {
+							display: none;
+						}
+					}
+				}
 
-      .hero-subtitle {
-        font-size: 1.5rem;
-        font-weight: 400;
-        margin: 0;
-        color: #fff;
-      }
+				.navbar-buttons {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
 
-      .btn-primary {
-        appearance: none;
-        background-color: var(--color-background-soft);
-        border: 1px solid var(--color-background-soft);
-        border-radius: 6px;
-        color: var(--color-heading);
-        display: inline-block;
-        font-family: inherit;
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 32px;
-        padding: 8px 35px;
-        margin: 1rem 0 0 0;
-        min-width: 200px;
-        text-align: center;
-        text-decoration: none;
-        transition: all 0.2s ease-in-out;
+					a {
+						text-decoration: none;
+						color: var(--color-background);
+						margin-left: 12px;
+						background-color: var(--color-heading);
+						padding: 5px 15px;
+						border-radius: 1rem;
+						transition: all 0.2s ease-in-out;
 
-        &:hover {
-          background-color: var(--color-background-mute);
-          border-color: var(--color-background-mute);
-          color: var(--color-heading);
-        }
-      }
+						&:hover {
+							transform: translateY(2px);
+						}
+					}
+				}
+			}
+		}
 
-      .page-scroll {
-        position: absolute;
-        bottom: 5rem;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        width: 50px;
-        height: 50px;
-        background-color: var(--color-background-soft);
-        color: var(--color-heading);
-        border: none;
-        border-radius: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-        animation: click-me 2s ease-in-out infinite;
+		.content-container {
+			backdrop-filter: blur(16px);
+			background-color: rgba(68, 64, 60, 0.1);
+			border: 1px solid rgb(41, 37, 36);
+			border-radius: 12px;
+			width: 100%;
+			max-width: 650px;
+			height: 100%;
+			max-height: 500px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-evenly;
+			padding: 12px;
+			text-align: center;
 
-        &:hover {
-          background-color: var(--color-background-mute);
-          color: var(--color-heading);
-        }
-      }
+			.text-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
 
-      @keyframes click-me {
-        0% {
-          transform: translateY(0) scale(1);
-        }
-        50% {
-          transform: translateY(-10px) scale(1.1);
-        }
-        100% {
-          transform: translateY(0) scale(1);
-        }
-      }
-    }
+				h1 {
+					font-size: 2.5rem;
+					font-weight: 600;
+					color: var(--color-text);
+					margin-bottom: 12px;
+					margin: 0;
+				}
 
-    .leaderboards-wrapper {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      margin: 0 auto;
-      height: 100%;
-      width: 100%;
-      max-width: 1000px;
-      padding: 0 1rem;
+				p {
+					font-size: 1.2rem;
+					font-weight: 400;
+					color: var(--color-text-muted);
+					margin: 0;
+				}
+			}
 
-      @media screen and (max-width: 768px) {
-        display: none;
-      }
+			.stats-container {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+				margin-top: 12px;
+				width: 100%;
+				max-width: 200px;
 
-      .views-leaderboard {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        height: 100%;
-        width: 100%;
-        max-width: 500px;
-        background-color: var(--color-background-soft);
-        border-radius: 1rem;
-        padding: 1rem 3rem;
-        margin: 1rem;
+				.stat {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
 
-        .leaderboard-title-text {
-          font-size: 1.5rem;
-          font-weight: 700;
-          margin: 0;
-          color: #fff;
-        }
+					h1 {
+						font-size: 1.25rem;
+						font-weight: 500;
+						color: var(--color-text);
+						margin-bottom: 12px;
+						margin: 0;
+					}
 
-        .leaderboard-table {
-          display: flex;
-          flex-direction: column;
-          align-items: space-between;
-          justify-content: space-between;
-          width: 100%;
-          height: 100%;
-          margin: 1rem 0;
-          padding: 0;
-          overflow: auto;
+					p {
+						font-size: 1rem;
+						font-weight: 400;
+						color: var(--color-text-muted);
+						margin: 0;
+					}
+				}
+			}
 
-          .leaderboard-item {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            text-align: center;
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
+			.feature-grid {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(2, 1fr);
+				grid-gap: 12px;
+				width: 100%;
+				max-width: 650px;
+				margin-top: 12px;
 
-            .leaderboard-item-link {
-              font-size: 1rem;
-              font-weight: 600;
-              color: var(--color-heading);
-              text-decoration: none;
-              transition: all 0.2s ease-in-out;
+				.feature-grid-card {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					background-color: rgba(68, 64, 60, 0.1);
+					border: 1px solid rgb(41, 37, 36);
+					border-radius: 12px;
+					padding: 12px;
 
-              &:hover {
-                color: var(--color-primary);
-                text-decoration: underline;
-              }
-            }
-          }
-        }
+					h3 {
+						font-size: 1.25rem;
+						font-weight: 500;
+						color: var(--color-text);
+						margin-bottom: 12px;
+						margin: 0;
+					}
 
-        .btn-primary {
-          appearance: none;
-          background-color: var(--color-background-soft);
-          border: 1px solid var(--color-background-soft);
-          border-radius: 6px;
-          color: var(--color-heading);
-          display: inline-block;
-          font-family: inherit;
-          font-size: 18px;
-          font-weight: 600;
-          line-height: 32px;
-          padding: 8px 35px;
-          margin: 1rem 0 0 0;
-          min-width: 200px;
-          text-align: center;
-          text-decoration: none;
-          transition: all 0.2s ease-in-out;
+					p {
+						font-size: 1rem;
+						font-weight: 400;
+						color: var(--color-text-muted);
+						margin: 0;
+					}
+				}
+			}
 
-          &:hover {
-            background-color: var(--color-background-mute);
-            border-color: var(--color-background-mute);
-            color: var(--color-heading);
-          }
-        }
-      }
-    }
+			a {
+				text-decoration: none;
+				color: var(--color-background);
+				margin-top: 12px;
+				background-color: var(--color-heading);
+				padding: 10px 20px;
+				border-radius: 1rem;
+				transition: all 0.2s ease-in-out;
 
-    .features-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      margin: 0 auto;
-      height: 100%;
-      width: 100%;
-      max-width: 1000px;
-      padding: 0 1rem;
+				&:hover {
+					scale: 1.05;
+				}
+			}
+		}
 
-      @media screen and (max-width: 768px) {
-        display: none;
-      }
+		.background {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			filter: blur(4px);
 
-      .feature-wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        margin: 5rem auto;
-        overflow: hidden;
-        height: 40vh;
-        width: 100%;
-        max-width: 1000px;
-        padding: 0 1rem;
-
-        .feature-textarea {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          margin: 0 auto;
-          height: 100%;
-          width: 100%;
-          max-width: 1000px;
-          padding: 0 1rem;
-
-          .feature-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin: 0;
-            color: #fff;
-          }
-
-          .feature-description {
-            font-size: 1rem;
-            font-weight: 400;
-            margin: 0;
-            color: #fff;
-          }
-        }
-
-        .feature-image {
-          width: 100%;
-          max-width: 1000px;
-          padding: 0 1rem;
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-
-          img {
-            width: 100%;
-            object-fit: cover;
-            transform: perspective(1000px) rotate3d(1, 0, 0, 0deg) scale3d(1, 1, 1);
-            transition: all 0.25s ease-in-out;
-
-            &:hover {
-              transform: perspective(1000px) rotate3d(1, 0, 0, 5deg) scale3d(1.05, 1.05, 1.05);
-            }
-          }
-        }
-
-        .btn-primary {
-          appearance: none;
-          background-color: var(--color-background-soft);
-          border: 1px solid var(--color-background-soft);
-          border-radius: 6px;
-          color: var(--color-heading);
-          display: inline-block;
-          font-family: inherit;
-          font-size: 18px;
-          font-weight: 600;
-          line-height: 32px;
-          padding: 8px 35px;
-          margin: 1rem 0 0 0;
-          min-width: 200px;
-          text-align: center;
-          text-decoration: none;
-          transition: all 0.2s ease-in-out;
-
-          &:hover {
-            background-color: var(--color-background-mute);
-            border-color: var(--color-background-mute);
-            color: var(--color-heading);
-          }
-        }
-      }
-    }
-  }
+			#tsparticles {
+				height: 100%;
+				width: 100%;
+			}
+		}
+	}
 </style>
