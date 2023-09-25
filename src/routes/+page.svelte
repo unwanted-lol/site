@@ -2,7 +2,6 @@
 	import { onMount } from 'svelte';
 	import Particles from 'svelte-particles';
 	import type { Engine } from 'tsparticles-engine';
-	import { loadSlim } from 'tsparticles-slim';
 // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
 	import { cubicOut } from 'svelte/easing';
 	import { fade } from 'svelte/transition';
@@ -150,7 +149,6 @@
 	{/if}
 
 	<div class="background">
-		<Particles id="tsparticles" options={particlesConfig} {particlesInit} />
 	</div>
 </main>
 
