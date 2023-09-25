@@ -108,7 +108,6 @@
 				<div class="feature-grid-card">
 					<h3>
 						Interactive Dashboard 
-						from './$types'; export let data: PageData;
 					</h3>
 					<p>
 						Our dashboard is easy to use and allows you to customize your biolink with
